@@ -256,11 +256,18 @@
   .qr-card .qr { background: #fff; border-radius: 18px; padding: 14px; width: 150px; }
   .qr-card .qr img { width: 100%; height: auto; }
   .qr-card p { font: 500 16px/1.3 var(--text); }
-  .contact-card { background: #fff; border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+  .contact-card { position: relative; overflow: hidden; grid-column: span 2; background: #e3e5e9; border-radius: var(--radius);
+                  padding: 36px 40px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+  .contact-card::after { content: ''; position: absolute; right: -2%; bottom: -6%; width: 46%; height: 116%;
+                         background: url(img/hero-coins-sm.webp) right bottom / contain no-repeat; opacity: .45; pointer-events: none; }
+  .contact-card > * { position: relative; z-index: 1; }
+  .contact-card .btn span { border-bottom: 1px solid currentColor; line-height: 1.2; }
   .contact { display: flex; align-items: center; gap: 16px; font-size: 18px; text-decoration: none; }
   .contact span { border-bottom: 1px solid currentColor; line-height: 1.3; }
   .contact:hover { color: var(--green); }
   .contact i { flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; }
+  .contact i.c-npb { background: #0b0b0c; }
+  .contact i.c-npb img { width: 20px; height: 20px; }
   .contact-card .btn { align-self: flex-start; }
 
   /* ---------- лента наград: едет туда-обратно, при наведении стоит (как на gift) ---------- */
@@ -327,6 +334,8 @@
     .aw { padding: 52px 0 44px; }
     .ftr { padding-top: 56px; }
     .grid-3, .join { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .contact-card { grid-column: span 1; padding: 28px 24px; }
+    .contact-card::after { width: 52%; opacity: .35; }
     .br-5 { grid-column: span 2; }
     .aud .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .aud .grid-3 > .card, .aud .grid-3 > .card:nth-child(n+4) { grid-column: auto; }
@@ -343,6 +352,9 @@
     .offer-card { padding: 28px 24px 32px; }
     .sec-title + .grid-3, .sec-title + .grid-2, .sec-lead + .grid-3, .steps4 { margin-top: 32px; }
     .grid-3, .grid-2, .join, .stats, .steps4 { grid-template-columns: minmax(0, 1fr); }
+    .contact-card { grid-column: auto; }
+    .contact-card::after { display: none; }
+    .contact span { font-size: 15px; word-break: break-all; }
     .br-5 { grid-column: auto; }
     .aud .grid-3 { grid-template-columns: minmax(0, 1fr); }
     .aud .grid-3 > .card:nth-child(5) { grid-column: auto; }
@@ -391,7 +403,7 @@
           <p class="hero-sub">Развивайте свой партнерский бизнес вместе с надежным международным брокером</p>
           <div class="hero-cta">
             <a class="btn" href="https://mynpb.nl/lprureg" target="_blank" rel="noopener">Стать партнером</a>
-            <a class="btn btn-ghost" href="#programs">Типы программ</a>
+            <a class="btn btn-ghost" href="https://s.salebot.pro/NPB_1" target="_blank" rel="noopener">Связаться в Telegram</a>
           </div>
         </div>
         <div class="hero-viz" aria-hidden="true">
@@ -640,15 +652,19 @@
       </div>
       <div class="join">
         <div class="qr-card rv">
-          <div class="qr"><img src="img/qr-register.svg" width="200" height="200" alt="QR-код: регистрация партнера NPB Markets" loading="lazy"></div>
+          <div class="qr"><img src="img/qr-register.png" width="294" height="294" alt="QR-код: регистрация партнера NPB Markets" loading="lazy"></div>
           <p>QR-код для регистрации</p>
         </div>
         <div class="contact-card rv">
-          <a class="contact" href="https://s.salebot.pro/NPB_1" target="_blank" rel="noopener">
-            <i style="background:#2aa3e0"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.4ZM8.3 13.9l9.4-5.9c.5-.3.9-.1.5.2l-8 7.2-.3 3.3-1.6-4.8Z"/></svg></i>
-            <span>Написать в Telegram</span>
+          <a class="contact" href="https://npb.markets-official.com/ru-partnership" target="_blank" rel="noopener">
+            <i class="c-npb"><img src="img/npb-mark.svg" width="20" height="20" alt="" loading="lazy"></i>
+            <span>https://npb.markets-official.com/ru-partnership</span>
           </a>
-          <a class="btn" href="https://mynpb.nl/lprureg" target="_blank" rel="noopener">Стать партнером</a>
+          <a class="contact" href="https://salebot.site/r/NPB_1" target="_blank" rel="noopener">
+            <i style="background:#2aa3e0"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.4ZM8.3 13.9l9.4-5.9c.5-.3.9-.1.5.2l-8 7.2-.3 3.3-1.6-4.8Z"/></svg></i>
+            <span>https://salebot.site/r/NPB_1</span>
+          </a>
+          <a class="btn" href="https://mynpb.nl/lprureg" target="_blank" rel="noopener"><span>Стать партнёром</span></a>
         </div>
       </div>
     </div>
@@ -739,6 +755,24 @@
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
   });
+
+  // Метки рекламы (utm_*, fbclid, gclid, yclid и т.п.) с адреса страницы
+  // дописываются ко всем внешним ссылкам — чтобы в боте и в кабинете было видно источник клиента
+  (function () {
+    var q = new URLSearchParams(location.search), keep = new URLSearchParams();
+    q.forEach(function (v, k) {
+      if (/^utm_/i.test(k) || /^(fbclid|gclid|yclid|ymclid|ysclid|_openstat|ref|referrer|click_id|sub_id|subid)$/i.test(k)) keep.append(k, v);
+    });
+    if (!keep.toString()) return;
+    var hosts = ['s.salebot.pro', 'salebot.site', 'mynpb.nl', 'npb.markets-official.com'];
+    document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+      var u;
+      try { u = new URL(a.href); } catch (e) { return; }
+      if (hosts.indexOf(u.hostname) === -1) return;
+      keep.forEach(function (v, k) { if (!u.searchParams.has(k)) u.searchParams.append(k, v); });
+      a.href = u.toString();
+    });
+  })();
 
   // меню на планшете и телефоне
   (function () {
