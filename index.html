@@ -215,18 +215,16 @@
   .ml .card-body { gap: 20px; }
   .ml .card-art { width: auto; max-width: 78%; max-height: 190px; object-fit: contain; margin: auto 40px 44px; align-self: flex-start; }
 
-  /* «Условия»: переключатель кликается — ползунок едет, цвет меняется */
+  /* «Условия»: переключатель реагирует на прокрутку — карточка доехала до середины экрана: включён (зелёный), ниже — выключен (серый) */
   .ml-ctrl { --u: 80px; display: grid; grid-template-columns: auto auto; gap: 12px; justify-content: start; margin: auto 40px 44px; }
   .mc-dot { width: var(--u); height: var(--u); border-radius: 50%; background: #00cc2c; display: grid; place-items: center; transition: background-color .35s ease; }
   .mc-dot svg { width: 40%; height: 40%; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-  .mc-switch { position: relative; width: calc(var(--u) * 1.72); height: var(--u); border: 0; padding: 0; border-radius: var(--u); cursor: pointer;
+  .mc-switch { position: relative; width: calc(var(--u) * 1.72); height: var(--u); border: 0; padding: 0; border-radius: var(--u);
                background: #d6d8de; transition: background-color .35s ease, box-shadow .15s ease; }
   .mc-switch i { position: absolute; top: 7px; left: 7px; width: calc(var(--u) - 14px); height: calc(var(--u) - 14px); border-radius: 50%; background: #fff;
                  box-shadow: 0 2px 6px rgba(0, 0, 0, .18); transition: transform .35s cubic-bezier(.3, .7, .2, 1.2); }
   .mc-switch.is-on { background: #00cc2c; }
   .mc-switch.is-on i { transform: translateX(calc(var(--u) * .72)); }
-  .mc-switch:hover { box-shadow: 0 0 0 4px rgba(0, 204, 44, .18); }
-  .mc-switch:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
   .ml-ctrl:not(:has(.is-on)) .mc-dot { background: #b8bcc4; }
 
   /* ---------- 7. Помогаем партнерам ---------- */
@@ -264,7 +262,6 @@
   .contact-card::after { content: ''; position: absolute; right: -2%; bottom: -6%; width: 46%; height: 116%;
                          background: url(img/hero-coins-sm.webp) right bottom / contain no-repeat; opacity: .45; pointer-events: none; }
   .contact-card > * { position: relative; z-index: 1; }
-  .contact-card .btn span { border-bottom: 1px solid currentColor; line-height: 1.2; }
   .contact { display: flex; align-items: center; gap: 16px; font-size: 18px; text-decoration: none; }
   .contact span { border-bottom: 1px solid currentColor; line-height: 1.3; }
   .contact:hover { color: var(--green); }
@@ -386,12 +383,12 @@
       <a href="#cpa">CPA</a>
       <a href="#support">Поддержка</a>
       <a href="#start">Как начать</a>
-      <a class="nav-login" href="https://mynpb.nl/lpru" target="_blank" rel="noopener">Войти в кабинет</a>
+      <a class="nav-login" href="https://nm-go.com/lpru" target="_blank" rel="noopener">Войти в кабинет</a>
     </nav>
     <div class="hdr-act">
       <button class="burger" type="button" aria-label="Меню" aria-expanded="false"><i></i></button>
-            <a class="login" href="https://mynpb.nl/lpru" target="_blank" rel="noopener">Войти</a>
-      <a class="btn" href="https://mynpb.nl/lprureg" target="_blank" rel="noopener">Стать партнером</a>
+            <a class="login" href="https://nm-go.com/lpru" target="_blank" rel="noopener">Войти</a>
+      <a class="btn" href="https://nm-go.com/lprureg" target="_blank" rel="noopener">Стать партнером</a>
     </div>
   </div>
 </header>
@@ -405,7 +402,7 @@
           <h1>Партнерская программа NPB Markets</h1>
           <p class="hero-sub">Развивайте свой партнерский бизнес вместе с надежным международным брокером</p>
           <div class="hero-cta">
-            <a class="btn" href="https://mynpb.nl/lprureg" target="_blank" rel="noopener">Стать партнером</a>
+            <a class="btn" href="https://nm-go.com/lprureg" target="_blank" rel="noopener">Стать партнером</a>
             <a class="btn btn-tg" href="https://s.salebot.pro/NPB_1" target="_blank" rel="noopener">Связаться в Telegram</a>
           </div>
         </div>
@@ -526,7 +523,7 @@
           <p>Используйте разные условия для разных участников сети</p>
         </div><div class="card-art ml-ctrl">
           <span class="mc-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span>
-          <button class="mc-switch is-on" type="button" aria-pressed="true" aria-label="Разные условия для разных участников сети"><i></i></button>
+          <span class="mc-switch is-on" aria-hidden="true"><i></i></span>
           <span class="mc-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5"/></svg></span>
           <span class="mc-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span>
         </div></article>
@@ -565,7 +562,7 @@
         <div class="offer-card offer-pay rv">
           <p class="offer-label">Вознаграждение за каждого</p>
           <p class="offer-sum">нового<br><b>активного</b><br>трейдера</p>
-          <a class="btn" href="https://mynpb.nl/lprureg" target="_blank" rel="noopener">Стать партнером</a>
+          <a class="btn" href="https://nm-go.com/lprureg" target="_blank" rel="noopener">Стать партнером</a>
         </div>
       </div>
     </div>
@@ -661,13 +658,13 @@
         <div class="contact-card rv">
           <a class="contact" href="https://npb.markets-official.com/ru-partnership" target="_blank" rel="noopener">
             <i class="c-npb"><img src="img/npb-icon.png" width="36" height="36" alt="" loading="lazy"></i>
-            <span>https://npb.markets-official.com/ru-partnership</span>
+            <span>Корпоративный сайт</span>
           </a>
           <a class="contact" href="https://salebot.site/r/NPB_1" target="_blank" rel="noopener">
             <i style="background:#2aa3e0"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.1.8.8.8.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.4ZM8.3 13.9l9.4-5.9c.5-.3.9-.1.5.2l-8 7.2-.3 3.3-1.6-4.8Z"/></svg></i>
-            <span>https://salebot.site/r/NPB_1</span>
+            <span>Телеграм</span>
           </a>
-          <a class="btn" href="https://mynpb.nl/lprureg" target="_blank" rel="noopener"><span>Стать партнёром</span></a>
+          <a class="btn" href="https://nm-go.com/lprureg" target="_blank" rel="noopener"><span>Стать партнёром</span></a>
         </div>
       </div>
     </div>
@@ -751,13 +748,25 @@
     document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
   })();
 
-  // переключатель в карточке «Условия»
-  document.querySelectorAll('.mc-switch').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var on = b.classList.toggle('is-on');
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
-  });
+  // переключатель в карточке «Условия» реагирует на прокрутку:
+  // пока карточка в нижней части экрана — выключен, доехала до середины — включается;
+  // прокрутили обратно вниз — снова выключается. Без анимаций (reduced-motion) — всегда включён.
+  (function () {
+    var sw = document.querySelectorAll('.mc-switch');
+    if (!sw.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var frame = 0;
+    function update() {
+      frame = 0;
+      var line = innerHeight * 0.6;
+      sw.forEach(function (b) {
+        var r = b.getBoundingClientRect();
+        b.classList.toggle('is-on', r.top + r.height / 2 < line);
+      });
+    }
+    addEventListener('scroll', function () { if (!frame) frame = requestAnimationFrame(update); }, { passive: true });
+    addEventListener('resize', update);
+    update();
+  })();
 
   // Метки рекламы (utm_*, fbclid, gclid, yclid и т.п.) с адреса страницы
   // дописываются ко всем внешним ссылкам — чтобы в боте и в кабинете было видно источник клиента
@@ -767,7 +776,7 @@
       if (/^utm_/i.test(k) || /^(fbclid|gclid|yclid|ymclid|ysclid|_openstat|ref|referrer|click_id|sub_id|subid)$/i.test(k)) keep.append(k, v);
     });
     if (!keep.toString()) return;
-    var hosts = ['s.salebot.pro', 'salebot.site', 'mynpb.nl', 'npb.markets-official.com'];
+    var hosts = ['s.salebot.pro', 'salebot.site', 'nm-go.com', 'npb.markets-official.com'];
     document.querySelectorAll('a[href^="http"]').forEach(function (a) {
       var u;
       try { u = new URL(a.href); } catch (e) { return; }
